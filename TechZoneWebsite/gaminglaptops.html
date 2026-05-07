@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Laptops - TechZone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* This ensures all buttons are centered in the middle of the card */
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .product-card button {
+            margin: 10px auto;
+            display: block;
+            background-color: #10b981; /* Green color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">XEROX TECH HUB</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="businesslaptops.html">Laptops</a></li>
+                <li><a href="gaminglaptops.html">Gaming</a></li>
+                <li><a href="workstations.html">Workstations</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="products">
+        <h2 class="section-title">Gaming Laptops</h2>
+        <div class="product-container">
+            
+            <div class="product-card">
+                <img src="images/ROG.jpeg" alt="ASUS ROG">
+                <h3>ASUS ROG STRIX G15</h3>
+                <p>AMD Ryzen 7 • RTX 3060 • 16GB RAM • 512GB SSD</p>
+                <h4>KES 150,000</h4>
+                <button onclick="addToCart('ASUS ROG STRIX G15', 150000, 'images/ROG.jpeg')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/MSICYBORG15.jpg" alt="MSI Cyborg 15">
+                <h3>MSI Cyborg 15</h3>
+                <p>Core i7-13th Gen • RTX 4060 (6GB) • 16GB RAM • 512gb SSD</p>
+                <h4>KES 140,000</h4>
+                <button onclick="addToCart('MSI Cyborg 15', 140000, 'images/MSICYBORG15.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/HPVICTIS15.png" alt="HP Victus 15">
+                <h3>HP Victus 15</h3>
+                <p>Core i7-13th Gen • RTX 4050 (6GB) • 16GB RAM • 512GB SSD</p>
+                <h4>KES 142,000</h4>
+                <button onclick="addToCart('HP Victus 15', 142000, 'images/HPVICTIS15.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/LENOVOL0Q15.png" alt="Lenovo LOQ 15">
+                <h3>Lenovo LOQ 15</h3>
+                <p>Core i7-13th Gen • RTX 3050 (6GB) • 16GB RAM • 512GB SSD</p>
+                <h4>KES 145,000</h4>
+                <button onclick="addToCart('Lenovo LOQ 15', 145000, 'images/LENOVOL0Q15.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/ACERNITRO5.jpeg" alt="Acer Nitro 5">
+                <h3>Acer Nitro 5</h3>
+                <p>Core i9-12th Gen • RTX 3060 (4GB) • 16GB RAM • 512GB SSD</p>
+                <h4>KES 160,000</h4>
+                <button onclick="addToCart('Acer Nitro 5', 160000, 'images/ACERNITRO5.jpeg')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/HPZBOOK15G6.jpg" alt="HP ZBook 15 G6">
+                <h3>HP ZBook 15 G6</h3>
+                <p>Core i7-9th Gen • Quadro T2000 • 32GB RAM • 512GB SSD</p>
+                <h4>KES 75,000</h4>
+                <button onclick="addToCart('HP ZBook 15 G6', 75000, 'images/HPZBOOK15G6.jpg')">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 XEROX TECH HUB | Kerugoya, Kenya</p>
+    </footer>
+
+    <script>
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: name, price: price, image: image });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(name + " added to cart!");
+        }
+    </script>
+</body>
+</html>
