@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workstations - TechZone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensures all buttons are centered in the middle of the card */
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .product-card button {
+            margin: 10px auto;
+            display: block;
+            background-color: #10b981;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">ZEPH TECH ENTERPRISE</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="businesslaptops.html">Laptops</a></li>
+                <li><a href="gaminglaptops.html">Gaming</a></li>
+                <li><a href="workstations.html">Workstations</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="products">
+        <h2 class="section-title">Engineering Workstations</h2>
+        <div class="product-container">
+
+            <div class="product-card">
+                <img src="images/DELLT5810.jpeg" alt="Dell T5810">
+                <h3>Dell Precision T5810</h3>
+                <p>Xeon E5-1603 v3 • 16GB RAM • 500GB HDD</p>
+                <h4>KES 39,500</h4>
+                <button onclick="addToCart('Dell Precision T5810', 39500, 'images/DELLT5810.jpeg')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/DELL3630.png" alt="Dell 3630">
+                <h3>Dell Precision 3630</h3>
+                <p>Core i5-9th Gen • 8GB RAM • 500GB HDD</p>
+                <h4>KES 34,000</h4>
+                <button onclick="addToCart('Dell Precision 3630', 34000, 'images/DELL3630.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/HPZ230.jpg" alt="HP Z230">
+                <h3>HP Z230 Tower</h3>
+                <p>Core i5-4th Gen • 8GB RAM • 500GB HDD</p>
+                <h4>KES 14,000</h4>
+                <button onclick="addToCart('HP Z230 Tower', 14000, 'images/HPZ230.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/HPZ240.jpg" alt="HP Z240">
+                <h3>HP Z240 SFF</h3>
+                <p>Core i7-6th Gen • 16GB RAM • 500GB HDD</p>
+                <h4>KES 22,000</h4>
+                <button onclick="addToCart('HP Z240 SFF', 22000, 'images/HPZ240.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/HPZ440.webp" alt="HP Z440">
+                <h3>HP Z440 Tower</h3>
+                <p>Xeon E5-2630 v3 • 16GB RAM • 500GB HDD</p>
+                <h4>KES 40,000</h4>
+                <button onclick="addToCart('HP Z440 Tower', 40000, 'images/HPZ440.webp')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/THINKSTATIONT300.jpeg" alt="Lenovo P300">
+                <h3>ThinkStation P300</h3>
+                <p>Core i7-4th Gen • 8GB RAM • 1TB HDD</p>
+                <h4>KES 20,000</h4>
+                <button onclick="addToCart('ThinkStation P300', 20000, 'images/THINKSTATIONP330.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/THINKSTATIONP310.png" alt="Lenovo P310">
+                <h3>ThinkStation P310</h3>
+                <p>Core i7-6th Gen • 16GB RAM • 500GB HDD</p>
+                <h4>KES 25,000</h4>
+                <button onclick="addToCart('ThinkStation P310', 25000, 'images/THINKSTATIONP310.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/THINKSTATIONP330.png" alt="Lenovo P320">
+                <h3>ThinkStation P330</h3>
+                <p>Core i7 8th gen • 16GB RAM • 500GB SSD</p>
+                <h4>KES 39,000</h4>
+                <button onclick="addToCart('ThinkStation P330', 39000, 'images/THINKSTATIONP330.png')">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 ZEPH TECH ENTERPRISE | Kerugoya, Kenya</p>
+    </footer>
+
+    <script>
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: name, price: price, image: image });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(name + " added to cart!");
+        }
+    </script>
+</body>
+</html>

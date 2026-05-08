@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Laptops - TechZone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* This ensures all buttons are centered in the middle of the card */
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .product-card button {
+            margin: 10px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">ZEPH TECH ENTERPRISE</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="businesslaptops.html">Laptops</a></li>
+                <li><a href="gaminglaptops.html">Gaming</a></li>
+                <li><a href="workstations.html">Workstations</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="products">
+        <h2 class="section-title">Business Laptops</h2>
+        <div class="product-container">
+            
+            <div class="product-card">
+                <img src="images/X280.jpeg" alt="ThinkPad X280">
+                <h3>Lenovo ThinkPad X280</h3>
+                <p>Intel Core i7 • 8GB RAM • 256GB SSD</p>
+                <h4>KES 25,000</h4>
+                <button onclick="addToCart('Lenovo ThinkPad X280', 25000, 'images/X280.jpeg')" style="background-color: #10b981;">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/840G5.png" alt="HP EliteBook">
+                <h3>HP EliteBook 840 G5</h3>
+                <p>Intel Core i7 • 8GB RAM • 256GB SSD</p>
+                <h4>KES 25,000</h4>
+                <button onclick="addToCart('HP EliteBook 840 G5', 25000, 'images/840G5.png')" style="background-color: #10b981;">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/640G5.png" alt="HP ProBook 640 G5">
+                <h3>HP ProBook 640 G5</h3>
+                <p>Core i5 8th Gen • 8GB RAM • 256GB SSD</p>
+                <h4>KES 24,000</h4>
+                <button onclick="addToCart('HP ProBook 640 G5', 24000, 'images/640G5.png')" style="background-color: #10b981;">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/840G3.webp" alt="HP EliteBook 840 G3">
+                <h3>HP EliteBook 840 G3</h3>
+                <p>Core i5 6th Gen • 8GB RAM • 256GB SSD</p>
+                <h4>KES 22,500</h4>
+                <button onclick="addToCart('HP EliteBook 840 G3', 22500, 'images/840G3.webp')" style="background-color: #10b981;">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Latitude7490.jpg" alt="Dell Latitude 7490">
+                <h3>Dell Latitude 7490</h3>
+                <p>Core i7 8th Gen • 16GB RAM • 512GB SSD</p>
+                <h4>KES 29,500</h4>
+                <button onclick="addToCart('Dell Latitude 7490', 29500, 'images/Latitude7490.jpg')" style="background-color: #10b981;">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/Latitude5490.png" alt="Dell Latitude 5490">
+                <h3>Dell Latitude 5490</h3>
+                <p>Core i5 8th Gen • 8GB RAM • 256GB SSD</p>
+                <h4>KES 23,500</h4>
+                <button onclick="addToCart('Dell Latitude 5490', 23500, 'images/Latitude5490.png')" style="background-color: #10b981;">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/T480s.jpg" alt="Lenovo ThinkPad T480s">
+                <h3>Lenovo ThinkPad T480s</h3>
+                <p>Core i5 8th Gen • 16GB RAM • 256GB SSD</p>
+                <h4>KES 28,000</h4>
+                <button onclick="addToCart('Lenovo ThinkPad T480s', 28000, 'images/T480s.jpg')" style="background-color: #10b981;">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 ZEPH TECH ENTERPRISE | Kerugoya, Kenya</p>
+    </footer>
+
+    <script>
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: name, price: price, image: image });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(name + " added to cart!");
+        }
+    </script>
+</body>
+</html>
